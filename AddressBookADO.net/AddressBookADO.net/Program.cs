@@ -6,7 +6,8 @@
         {
             Console.WriteLine("Welcome to AddressBook ADO.NET!");
             Console.WriteLine("Select option\n1)Create AddrssBookServiceDatabase\n2)Create AddressBookTable\n3)Inserting Details to DataBasen" +
-                "\n4)retrieve Details From dataBase\n5)Update Existing Contacts\n6)Delete Contacts from DataBase\n7)Finding Size By State And City");
+                "\n4)retrieve Details From dataBase\n5)Update Existing Contacts\n6)Delete Contacts from DataBase\n7)Finding Size By State And City"+
+                "\n8)Get Contacts for given City alphabetically sorted by FirstName");
             int op = Convert.ToInt16(Console.ReadLine());
             AddressBookRepo addressBookRepo = new AddressBookRepo();
             AddressBookModel addressbook = new AddressBookModel();
@@ -51,6 +52,11 @@
                     int CountState = addressBookRepo.CountOfEmployeeDetailsByState();
                     Console.WriteLine("Count of Records for given State :" + CountState);
                     break;
+                case 8:
+                    Console.WriteLine("Get Contacts for given City alphabetically sorted by FirstName");
+                    addressBookRepo.GetContactsInAlphabeticalOrderOfFirstName();
+                    break;
+
             }
         
         }
@@ -58,8 +64,8 @@
 }
 
 /*
-UC-7
-Finding Size By State And City
+UC-8
+Get Contacts for given City alphabetically sorted by FirstName
 
 Welcome to AddressBook ADO.NET!
 Select option
@@ -69,9 +75,11 @@ Select option
 4)retrieve Details From dataBase
 5)Update Existing Contacts
 6)Delete Contacts from DataBase
-7)Retreive Details By State And City
-7
-Count of Records for given City :2
-Count of Records for given State :2
+7)Finding Size By State And City
+8)Get Contacts alphabetically by FirstName
+8
+Get Contacts for given City sorted by FirstName
+Arun Ranga Peenya Bangalore Karnataka 520008 856874834 Arun@gmail.com
+Shivaraj Gowda Basaveshwar Nagar Bangalore Karnataka 560079 8618199776 4shivaraj@gmail.com
 
 */
