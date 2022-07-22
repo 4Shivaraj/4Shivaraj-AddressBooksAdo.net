@@ -45,3 +45,9 @@ as
 update  AddressBook set FirstName=@FirstName,LastName=@LastName,Address=@Address,City=@City,State=@State,Zip=@Zip,
 PhoneNumber=@PhoneNumber,Email=@Email where FirstName=@FirstName;
 
+/*Delete store procedure*/
+create procedure SpAddressBook_Delete
+	@FirstName varchar(50)
+as
+delete from AddressBook where FirstName = @FirstName;
+

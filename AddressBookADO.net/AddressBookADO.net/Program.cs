@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Welcome to AddressBook ADO.NET!");
             Console.WriteLine("Select option\n1)Create AddrssBookServiceDatabase\n2)Create AddressBookTable\n3)Inserting Details to DataBasen" +
-                "\n4)retrieve Details From dataBase\n5)Update Existing Contacts");
+                "\n4)retrieve Details From dataBase\n5)Update Existing Contacts\n6)Delete Contacts from DataBase");
             int op = Convert.ToInt16(Console.ReadLine());
             AddressBookRepo addressBookRepo = new AddressBookRepo();
             AddressBookModel addressbook = new AddressBookModel();
@@ -39,13 +39,18 @@
                     Console.WriteLine(UpdatedAddress);
                     Console.WriteLine("Record Updated successfully");
                     break;
+                case 6:
+                    addressbook.FirstName = "Sai";
+                    addressBookRepo.DeleteContact(addressbook);
+                    Console.WriteLine("Record deleted successfully");
+                    break;
             }
         }
     }
 }
 
 /*
-UC-5
+UC-6
 Welcome to AddressBook ADO.NET!
 Select option
 1)Create AddrssBookServiceDatabase
@@ -53,7 +58,7 @@ Select option
 3)Inserting Details to DataBasen
 4)retrieve Details From dataBase
 5)Update Existing Contacts
-5
-XYZ Colony
-Record Updated successfully
+6)Delete Contacts from DataBase
+6
+Record deleted successfully
 */
