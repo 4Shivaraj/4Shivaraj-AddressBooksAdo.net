@@ -316,6 +316,20 @@ namespace AddressBookADO.net
                 Console.WriteLine(e.Message);
             }
         }
+        //UC-10
+        //Count Records by AddressBookType
+        public int CountOfEmployeeDetailsByType()
+        {
+            int count;
+            SqlConnection Connection = new SqlConnection(@"Data Source=(localdb)\ProjectModels; Initial Catalog =AddressBookForADO; Integrated Security = True;");
+            connection.Open();
+            string Query = @"Select count(*) from AddressBook where AddressBookType='Friend';";
+            SqlCommand command = new SqlCommand(Query, connection);
+            object res = command.ExecuteScalar();
+            connection.Close();
+            int Count = (int)res;
+            return Count;
+        }
 
     }
 }

@@ -7,7 +7,8 @@
             Console.WriteLine("Welcome to AddressBook ADO.NET!");
             Console.WriteLine("Select option\n1)Create AddrssBookServiceDatabase\n2)Create AddressBookTable\n3)Inserting Details to DataBasen" +
                 "\n4)retrieve Details From dataBase\n5)Update Existing Contacts\n6)Delete Contacts from DataBase\n7)Finding Size By State And City"+
-                "\n8)Get Contacts for given City alphabetically sorted by FirstName\n9)identify each Address Book with name and Type");
+                "\n8)Get Contacts for given City alphabetically sorted by FirstName\n9)identify each Address Book with name and Type"+
+                "\n10)Count Number of Contacts by AddressBoookType");
             int op = Convert.ToInt16(Console.ReadLine());
             AddressBookRepo addressBookRepo = new AddressBookRepo();
             AddressBookModel addressbook = new AddressBookModel();
@@ -61,6 +62,11 @@
                     //addressBookRepo.AddAddressBookNameAndType();
                     addressBookRepo.GetContactsBYAddressBookType();
                     break;
+                case 10:
+                    int countByType = addressBookRepo.CountOfEmployeeDetailsByType();
+                    Console.WriteLine("Count of Records by Type Friend :" + countByType);
+                    break;
+
             }
         
         }
@@ -68,8 +74,8 @@
 }
 
 /*
-UC-9
-identify each Address Book with name and Type.
+UC-10
+Count of Records by Conatact Type Friend
 
 Welcome to AddressBook ADO.NET!
 Select option
@@ -82,9 +88,7 @@ Select option
 7)Finding Size By State And City
 8)Get Contacts for given City alphabetically sorted by FirstName
 9)identify each Address Book with name and Type
-9
-Ability to identify each Address Book with name and Type.
-shravanthi Pabboji XYZ Colony Hyderabad Telangana 520008 9876543210 Shravanthi@gmail.com Others Friend
-Cheluvesha Kumar Bonkina Hyderabad Telangana 520008 9876543210 bcheluvesha@gmail.com Others Friend
-Arun Ranga Peenya Bangalore Karnataka 520008 856874834 Arun@gmail.com Others Friend
+10)Count Number of Contacts by AddressBoookType
+10
+Count of Records by Type Friend :3
 */
