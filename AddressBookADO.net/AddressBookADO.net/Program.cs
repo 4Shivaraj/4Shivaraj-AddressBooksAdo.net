@@ -5,7 +5,8 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to AddressBook ADO.NET!");
-            Console.WriteLine("Select option\n1)Create AddrssBookServiceDatabase\n2)Create AddressBookTable\n3)Inserting Details to DataBase");
+            Console.WriteLine("Select option\n1)Create AddrssBookServiceDatabase\n2)Create AddressBookTable\n3)Inserting Details to DataBasen" +
+                "\n4)retrieve Details From dataBase");
             int op = Convert.ToInt16(Console.ReadLine());
             AddressBookRepo addressBookRepo = new AddressBookRepo();
             AddressBookModel addressbook = new AddressBookModel();
@@ -30,6 +31,9 @@
                     addressBookRepo.AddContact(addressbook);
                     Console.WriteLine("Record Inserted successfully");
                     break;
+                case 4:
+                    addressBookRepo.GetAllContact();
+                    break;
 
             }
         }
@@ -37,14 +41,15 @@
 }
 
 /*
-UC-3
-Inserting Details to DataBase
+UC-4
+Retrieve Details From dataBase
 Welcome to AddressBook ADO.NET!
 Select option
 1)Create AddrssBookServiceDatabase
 2)Create AddressBookTable
-3)Inserting Details to DataBase
-3
-Record Inserted successfully
+3)Inserting Details to DataBasen
+4)retrieve Details From dataBase
+4
+Shivaraj Gowda Basaveshwar Nagar Bangalore Karnataka 560079 8618199776 4shivaraj@gmail.com
 
 */
