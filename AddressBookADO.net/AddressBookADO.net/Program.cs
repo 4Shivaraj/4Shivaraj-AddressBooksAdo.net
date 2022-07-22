@@ -7,7 +7,7 @@
             Console.WriteLine("Welcome to AddressBook ADO.NET!");
             Console.WriteLine("Select option\n1)Create AddrssBookServiceDatabase\n2)Create AddressBookTable\n3)Inserting Details to DataBasen" +
                 "\n4)retrieve Details From dataBase\n5)Update Existing Contacts\n6)Delete Contacts from DataBase\n7)Finding Size By State And City"+
-                "\n8)Get Contacts for given City alphabetically sorted by FirstName");
+                "\n8)Get Contacts for given City alphabetically sorted by FirstName\n9)identify each Address Book with name and Type");
             int op = Convert.ToInt16(Console.ReadLine());
             AddressBookRepo addressBookRepo = new AddressBookRepo();
             AddressBookModel addressbook = new AddressBookModel();
@@ -56,7 +56,11 @@
                     Console.WriteLine("Get Contacts for given City alphabetically sorted by FirstName");
                     addressBookRepo.GetContactsInAlphabeticalOrderOfFirstName();
                     break;
-
+                case 9:
+                    Console.WriteLine("Ability to identify each Address Book with name and Type.");
+                    //addressBookRepo.AddAddressBookNameAndType();
+                    addressBookRepo.GetContactsBYAddressBookType();
+                    break;
             }
         
         }
@@ -64,8 +68,8 @@
 }
 
 /*
-UC-8
-Get Contacts for given City alphabetically sorted by FirstName
+UC-9
+identify each Address Book with name and Type.
 
 Welcome to AddressBook ADO.NET!
 Select option
@@ -76,10 +80,11 @@ Select option
 5)Update Existing Contacts
 6)Delete Contacts from DataBase
 7)Finding Size By State And City
-8)Get Contacts alphabetically by FirstName
-8
-Get Contacts for given City sorted by FirstName
-Arun Ranga Peenya Bangalore Karnataka 520008 856874834 Arun@gmail.com
-Shivaraj Gowda Basaveshwar Nagar Bangalore Karnataka 560079 8618199776 4shivaraj@gmail.com
-
+8)Get Contacts for given City alphabetically sorted by FirstName
+9)identify each Address Book with name and Type
+9
+Ability to identify each Address Book with name and Type.
+shravanthi Pabboji XYZ Colony Hyderabad Telangana 520008 9876543210 Shravanthi@gmail.com Others Friend
+Cheluvesha Kumar Bonkina Hyderabad Telangana 520008 9876543210 bcheluvesha@gmail.com Others Friend
+Arun Ranga Peenya Bangalore Karnataka 520008 856874834 Arun@gmail.com Others Friend
 */

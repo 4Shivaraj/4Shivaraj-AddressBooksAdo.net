@@ -53,3 +53,10 @@ delete from AddressBook where FirstName = @FirstName;
 
 insert into AddressBook values ('Cheluvesha','Kumar','Bonkina','Hyderabad','Telangana','520008','9876543210','bcheluvesha@gmail.com')
 insert into AddressBook values ('Arun','Ranga','Peenya','Bangalore','Karnataka','520008','856874834','Arun@gmail.com')
+
+--UC-10
+update Addressbook set AddressBookType = 'Friend';
+update Addressbook set AddressBookType = 'Family' Where FirstName = 'Shivaraj';
+
+update Addressbook set AddressBookName = 'Others';
+update Addressbook set AddressBookName = 'Personal' Where FirstName = 'Shivaraj';
