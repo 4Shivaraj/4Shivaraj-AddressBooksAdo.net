@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Welcome to AddressBook ADO.NET!");
             Console.WriteLine("Select option\n1)Create AddrssBookServiceDatabase\n2)Create AddressBookTable\n3)Inserting Details to DataBasen" +
-                "\n4)retrieve Details From dataBase\n5)Update Existing Contacts\n6)Delete Contacts from DataBase");
+                "\n4)retrieve Details From dataBase\n5)Update Existing Contacts\n6)Delete Contacts from DataBase\n7)Finding Size By State And City");
             int op = Convert.ToInt16(Console.ReadLine());
             AddressBookRepo addressBookRepo = new AddressBookRepo();
             AddressBookModel addressbook = new AddressBookModel();
@@ -39,18 +39,28 @@
                     Console.WriteLine(UpdatedAddress);
                     Console.WriteLine("Record Updated successfully");
                     break;
+
                 case 6:
                     addressbook.FirstName = "Sai";
                     addressBookRepo.DeleteContact(addressbook);
                     Console.WriteLine("Record deleted successfully");
                     break;
+                case 7:
+                    int countCity = addressBookRepo.CountOfEmployeeDetailsByCity();
+                    Console.WriteLine("Count of Records for given City :" + countCity);
+                    int CountState = addressBookRepo.CountOfEmployeeDetailsByState();
+                    Console.WriteLine("Count of Records for given State :" + CountState);
+                    break;
             }
+        
         }
     }
 }
 
 /*
-UC-6
+UC-7
+Finding Size By State And City
+
 Welcome to AddressBook ADO.NET!
 Select option
 1)Create AddrssBookServiceDatabase
@@ -59,6 +69,9 @@ Select option
 4)retrieve Details From dataBase
 5)Update Existing Contacts
 6)Delete Contacts from DataBase
-6
-Record deleted successfully
+7)Retreive Details By State And City
+7
+Count of Records for given City :2
+Count of Records for given State :2
+
 */
