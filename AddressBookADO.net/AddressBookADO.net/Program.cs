@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Welcome to AddressBook ADO.NET!");
             Console.WriteLine("Select option\n1)Create AddrssBookServiceDatabase\n2)Create AddressBookTable\n3)Inserting Details to DataBasen" +
-                "\n4)retrieve Details From dataBase");
+                "\n4)retrieve Details From dataBase\n5)Update Existing Contacts");
             int op = Convert.ToInt16(Console.ReadLine());
             AddressBookRepo addressBookRepo = new AddressBookRepo();
             AddressBookModel addressbook = new AddressBookModel();
@@ -34,22 +34,26 @@
                 case 4:
                     addressBookRepo.GetAllContact();
                     break;
-
+                case 5:
+                    string UpdatedAddress = addressBookRepo.updateEmployeeDetails();
+                    Console.WriteLine(UpdatedAddress);
+                    Console.WriteLine("Record Updated successfully");
+                    break;
             }
         }
     }
 }
 
 /*
-UC-4
-Retrieve Details From dataBase
+UC-5
 Welcome to AddressBook ADO.NET!
 Select option
 1)Create AddrssBookServiceDatabase
 2)Create AddressBookTable
 3)Inserting Details to DataBasen
 4)retrieve Details From dataBase
-4
-Shivaraj Gowda Basaveshwar Nagar Bangalore Karnataka 560079 8618199776 4shivaraj@gmail.com
-
+5)Update Existing Contacts
+5
+XYZ Colony
+Record Updated successfully
 */
